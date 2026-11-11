@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NutriScan Privacy Policy</title><style>
+<title>Kesslo Privacy Policy</title><style>
 :root{--bg:#fff;--fg:#1d2320;--muted:#5b6660;--line:#dfe5e1;--accent:#1f7a4d;--code:#f2f5f3}
 @media (prefers-color-scheme:dark){:root{--bg:#121614;--fg:#e6ebe8;--muted:#9aa6a0;--line:#2a312d;--accent:#5cc58f;--code:#1b211e}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
@@ -9,10 +9,10 @@ a{color:var(--accent)}table{border-collapse:collapse;width:100%;display:block;ov
 blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid #d9a400;background:var(--code)}code{background:var(--code);padding:1px 4px;border-radius:4px}
 nav{font-size:.95rem;color:var(--muted)}nav a{margin-right:1em}
 </style></head>
-<body><main><nav><a href="./">NutriScan</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></nav>
-<h1 id="nutriscan-privacy-policy">NutriScan Privacy Policy</h1>
-<p><em>Last updated: 6 November 2026</em></p>
-<p>NutriScan ("the app", "we") gives you a personal score for packaged food from
+<body><main><nav><a href="./">Kesslo</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></nav>
+<h1 id="kesslo-privacy-policy">Kesslo Privacy Policy</h1>
+<p><em>Last updated: 10 November 2026</em></p>
+<p>Kesslo ("the app", "we") gives you a personal score for packaged food from
 a photo of its label. The app is made by Nikhil Anand, Dubai, United Arab Emirates,
 who is responsible for your data ("data controller"). Contact: contact.nutri.scan.fit@gmail.com.</p>
 <p>The short version:</p>
@@ -22,9 +22,9 @@ who is responsible for your data ("data controller"). Contact: contact.nutri.sca
   phone. You don't need an account.</li>
 <li><strong>Photos are never stored.</strong> Not on your phone, not on our server.</li>
 <li><strong>Some things you can switch on send data off your phone:</strong> an account
-  (to use NutriScan on several phones), Cloud AI (for phones that are too
+  (to use Kesslo on several phones), Cloud AI (for phones that are too
   slow for on-device AI), crash reports, and purchases. Free users also see
-  a banner ad. Each is explained below.</li>
+  ads. Each is explained below.</li>
 <li><strong>We don't sell your data</strong>, we don't show personalised ads, and we never
   give your health details to advertisers.</li>
 </ul>
@@ -59,7 +59,13 @@ who is responsible for your data ("data controller"). Contact: contact.nutri.sca
 your phone's secure storage (Android Keystore / iOS Keychain). It is excluded
 from phone backups. We can't see it unless you choose one of the options
 below. You can export it (Settings › Export my data) or delete it
-(Settings › Delete all data) at any time. Uninstalling the app also deletes it.</p>
+(Settings › Delete all data) at any time. Uninstalling the app also deletes it,
+and so does signing out of your account or deleting it (section 2.2).</p>
+<p>The export is a plain JSON file, which is <strong>not encrypted</strong>. The app writes
+it to its own temporary folder only so you can share or save it, and deletes
+that copy about 2 minutes after you share it (and again before the next
+export and when the app starts). Where you save or send the file is up to
+you.</p>
 <p>Label photos you take or pick are kept in memory only while the scan runs.
 The temporary file from the camera or photo picker is deleted as soon as it
 has been read. Photos are never saved to your gallery, app storage or any
@@ -85,6 +91,16 @@ iPhone) nothing is downloaded and everything runs on the phone.</p>
 <p>Before you sign in, the app tells you that your health profile and scan
 history will be stored in your account. By signing in you give your
 explicit consent to this.</p>
+<p>If you sign in on a phone that already has data, it is added to your
+account. Your account has one profile: if it already has one, that profile
+replaces the one on the phone.</p>
+<p>When you sign out, or delete your account, the account's data is removed
+from that phone. When you use <strong>Delete all data</strong> while signed in, the
+content of everything in your account is erased. So that your other phones
+delete their copies too, the account keeps a bare marker for each deleted
+item: its random id, its type (profile, scan or setting) and the time it was
+deleted, with no content. These markers are removed when you delete your
+account.</p>
 <p>The account is run on <strong>Supabase</strong> (Supabase Inc.), our hosting provider,
 on servers in <strong>Mumbai, India</strong> (AWS ap-south-1). Supabase encrypts the data
 in transit and at rest and processes it only on our instructions. Your data
@@ -108,7 +124,7 @@ before it is used. With Cloud AI, each scan or re-scan sends:</p>
   activity level, goals, allergies, diets, health conditions and pregnancy
   or breastfeeding,</li>
 </ul>
-<p>over an encrypted connection to NutriScan's server (a Supabase Edge
+<p>over an encrypted connection to Kesslo's server (a Supabase Edge
 Function), which passes them to <strong>Google Gemini</strong> (Google LLC) to score the
 label and returns the result to your phone. Your name and email are not
 sent to Google. We use Google's paid Gemini API, under which Google does not
@@ -116,9 +132,10 @@ use the content to train or improve its models. Google may keep requests for
 a limited time to detect abuse, as its terms allow.</p>
 <p>Our server does not store or log the photos, the profile details or the
 result. It only records, per account, how many Cloud AI scans you used each
-day, and logs the time taken and size of each request.</p>
-<p><strong>Free Cloud AI scans.</strong> Without a Cloud AI subscription you get one free
-Cloud AI scan a week per phone. To count it, the app sends an id for your
+day, and logs the time taken and size of each request. A scan that fails on
+our side is not counted.</p>
+<p><strong>Free Cloud AI scans.</strong> Without a Cloud AI subscription you get a limited
+number of free Cloud AI scans per phone. To count them, the app sends an id for your
 phone (on Android the system's app-specific Android ID; on iPhone a random id
 the app stores in your Keychain). The server stores only a one-way, salted
 hash of that id together with the week and the number of free scans used. It
@@ -129,13 +146,19 @@ Payments are handled by Google Play or Apple's App Store; we never see your
 card or payment details. We use <strong>RevenueCat</strong> (RevenueCat, Inc., USA) to
 check what you have bought. RevenueCat receives your purchase history and
 receipts from the store, a random app user id and, if you are signed in,
-your NutriScan user id (so our server can check your Cloud AI subscription),
+your Kesslo user id (so our server can check your Cloud AI subscription),
 plus basic device information such as the app version, OS version, country
-and IP address. We do not send RevenueCat your email, profile or scans.</p>
+and IP address. When you sign in or out, the app asks RevenueCat to check
+your Google Play or App Store purchases again, so what you bought stays
+active without you having to restore it. We do not send RevenueCat your
+email, profile or scans.</p>
 <h3 id="25-ads-google-admob-free-users-only">2.5 Ads (Google AdMob) — free users only</h3>
-<p>If you haven't bought Remove ads or Cloud AI, the app shows a banner ad at
-the bottom of the Home and History screens only. Ads are provided by
-<strong>Google AdMob</strong> (Google LLC). We ask only for <strong>non-personalised ads</strong>,
+<p>If you haven't bought Remove ads or Cloud AI, the app shows ads: a banner
+at the bottom of the Home and History screens, a full-screen ad after a scan
+finishes and before its result, and a full-screen ad when you open the app
+or come back to it after a while. Ads never cover a scan result or an
+allergy warning. Ads are provided by <strong>Google AdMob</strong>
+(Google LLC). We ask only for <strong>non-personalised ads</strong>,
 which are chosen from the app and general context, not from a profile of
 you. To show ads, measure them and prevent fraud, the AdMob SDK collects
 data such as your IP address (used for approximate location), the
@@ -143,14 +166,24 @@ advertising id of your phone, device and app information, and how you
 interact with the ads. We never give AdMob your health profile, scans, label
 text or photos.</p>
 <ul>
-<li>On iPhone the app does not ask to track you, and NutriScan does not track
+<li>On iPhone the app does not ask to track you, and Kesslo does not track
   you across other companies' apps or websites.</li>
 <li>In the EU, UK and Switzerland, Google's consent form is shown before any
-  ad loads; you can change your choice in Settings › Remove ads &amp; Cloud AI ›
+  ad loads; you can change your choice in Settings › Kesslo Plus ›
   Ad privacy choices.</li>
 <li>You can reset or delete your advertising id in your phone's settings.</li>
-<li>Paying users never load the ad SDK.</li>
+<li>If you bought Remove ads or Cloud AI, the app doesn't show ads and only
+  loads the ad SDK if you choose to watch a rewarded ad.</li>
 </ul>
+<p><strong>Rewarded ads.</strong> In some countries you can choose to watch an ad to get an
+extra free Cloud AI scan. To decide whether to offer this, the app checks
+your country on the phone (from your Play or App Store account, your SIM
+card or your phone's region setting); the country isn't sent to us. When
+you watch one, the app gives Google a one-way hash of your phone's id
+(described in 2.3), and Google sends it back to our server with a
+confirmation that the ad was watched. Our server stores the salted hash
+from 2.3, the week, and Google's id for that ad view, so each view is
+counted once. No account id, email or health details are involved.</p>
 <p>See how Google uses data from apps that use its services:
 <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></p>
 <h3 id="26-crash-reports-sentry-optional-off-by-default">2.6 Crash reports (Sentry) — optional, off by default</h3>
@@ -195,7 +228,7 @@ details, label text or scores.</p>
 <td>To provide what you bought (contract)</td>
 </tr>
 <tr>
-<td>Counting free Cloud AI scans per phone</td>
+<td>Counting free Cloud AI scans per phone, and extra scans earned with rewarded ads</td>
 <td>Our legitimate interest in preventing abuse of a free offer</td>
 </tr>
 <tr>
@@ -233,16 +266,20 @@ your account. Withdrawing doesn't affect what happened before.</p>
 <td>Until you delete it or your account</td>
 </tr>
 <tr>
+<td>Markers for deleted items (id, type and time only, no content)</td>
+<td>Until you delete your account</td>
+</tr>
+<tr>
 <td>Cloud AI photos and profile details</td>
 <td>Not stored by us; held by Google only as its paid API terms allow</td>
 </tr>
 <tr>
 <td>Cloud AI daily usage counts</td>
-<td>While your account exists</td>
+<td>About 4 weeks, then deleted</td>
 </tr>
 <tr>
-<td>Free-scan counts (hashed phone id)</td>
-<td>Weekly counters, not linked to you, kept while the free-scan offer runs</td>
+<td>Free-scan counts and rewarded-ad records (hashed phone id)</td>
+<td>Weekly counters, not linked to you, deleted after about 4 weeks</td>
 </tr>
 <tr>
 <td>Purchase records (RevenueCat, stores)</td>
@@ -261,20 +298,22 @@ your account. Withdrawing doesn't affect what happened before.</p>
 <h2 id="5-your-choices-and-rights">5. Your choices and rights</h2>
 <p>In the app you can, at any time:</p>
 <ul>
-<li><strong>See and export</strong> your data: Settings › Export my data (JSON file).</li>
+<li><strong>See and export</strong> your data: Settings › Export my data (JSON file with
+  your profile and your scans, including their allergy and diet warnings).</li>
 <li><strong>Correct</strong> it: edit your profile in Settings.</li>
 <li><strong>Delete</strong> one scan, or everything: Settings › Delete all data (this also
-  empties your account if you are signed in).</li>
+  empties your account and your other signed-in phones if you are signed
+  in).</li>
 <li><strong>Delete your account</strong>: Settings › Account › Delete account. This
   permanently deletes your account and everything in it, and the data on
   that phone.</li>
 </ul>
 <p><span id="delete-account"></span><strong>Deleting your account without the app.</strong> If you no longer have the app,
 email contact.nutri.scan.fit@gmail.com from the address of your account with the subject
-"Delete my NutriScan account". We will delete the account and all its data
+"Delete my Kesslo account". We will delete the account and all its data
 within 30 days and confirm by email. Purchases are kept by Google or Apple
 as their own records; cancel a subscription in your Play or App Store
-account (deleting the NutriScan account does not cancel it).</p>
+account (deleting the Kesslo account does not cancel it).</p>
 <p>Depending on where you live (for example the EU, UK, India, California and
 other US states), you may also have the right to access, correct, delete or
 port your data, to object to or restrict its use, to withdraw consent, and
@@ -295,14 +334,17 @@ and Cloudflare may process data in the United States and other countries.
 Where EU/UK law applies, these transfers are covered by the providers'
 standard contractual clauses or equivalent safeguards.</p>
 <h2 id="8-children">8. Children</h2>
-<p>NutriScan is for people aged 13 and over. We don't knowingly collect data
+<p>Kesslo is for people aged 13 and over. We don't knowingly collect data
 from children under 13. If you think a child under 13 has created an
 account, email contact.nutri.scan.fit@gmail.com and we will delete it. Users under 18 should
 use the app with a parent's or guardian's agreement where local law
 requires it.</p>
 <h2 id="9-health-information-disclaimer">9. Health information disclaimer</h2>
-<p>NutriScan's scores are AI estimates to help you compare food. They are not
-medical advice. Always check the label yourself, especially for allergens.</p>
+<p>Kesslo's scores are AI estimates to help you compare food. They are not
+medical advice. If the AI flags an allergen from your profile, the app
+always shows the product as "Not safe" with a score of 0; if it flags none,
+that does not mean the product is safe. Always check the label yourself,
+especially for allergens.</p>
 <h2 id="10-changes">10. Changes</h2>
 <p>If we change this policy, we will update the date at the top, and tell you in
 the app if the change is significant (for example a new kind of data or a new

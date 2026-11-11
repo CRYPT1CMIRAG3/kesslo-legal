@@ -1,25 +1,16 @@
-# NutriScan legal pages
+# Kesslo legal pages
 
-Privacy policy and terms of use for NutriScan, served by GitHub Pages.
+Privacy policy and terms of use for Kesslo, served by GitHub Pages.
 
-- Privacy policy: https://crypt1cmirag3.github.io/nutriscan-legal/privacy.html
-- Terms of use: https://crypt1cmirag3.github.io/nutriscan-legal/terms.html
-- Account deletion (for Play): https://crypt1cmirag3.github.io/nutriscan-legal/privacy.html#delete-account
+- Privacy policy: https://crypt1cmirag3.github.io/kesslo-legal/privacy.html
+- Terms of use: https://crypt1cmirag3.github.io/kesslo-legal/terms.html
+- Account deletion (for Play): https://crypt1cmirag3.github.io/kesslo-legal/privacy.html#delete-account
 
-## One-time setup
+Contact: contact.nutri.scan.fit@gmail.com
 
-1. github.com → New repository → name `nutriscan-legal`, **Public**, no
-   README. (Your app repo stays private.)
-2. Copy this folder's files (`index.html`, `privacy.html`, `terms.html`,
-   `.nojekyll`, `README.md`) into a new local folder, then:
-   ```
-   git init -b main
-   git add -A
-   git commit -m "Privacy policy and terms"
-   git remote add origin https://github.com/crypt1cmirag3/nutriscan-legal.git
-   git push -u origin main
-   ```
-3. Repo → Settings → Pages → Source: **Deploy from a branch**, branch
-   `main`, folder `/ (root)` → Save. After a minute the URLs above work.
+## Updating
 
+1. Edit the policy text and rebuild `index.html`, `privacy.html` and `terms.html`.
+2. Commit and push to `main`. GitHub Pages republishes the site in about a minute.
 
+Pages settings: Settings > Pages > Deploy from a branch > `main` / root.
